@@ -8,6 +8,8 @@
     <title>MyApp | Abnation</title>
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 </head>
 
 <body>
@@ -35,6 +37,11 @@
                                         placeholder="Enter Last Name">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="datepicker">Datepicker</label>
+                                    <input type="text" name="date" id="datepicker" class="form-control" placeholder="Select Date" /> 
+                                </div>
+
 
                                 <div class="form-group">
                                     <label for="email">Email</label>
@@ -56,13 +63,25 @@
         </div>
     </section>
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>           
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" ></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+    
     <script>
         $(document).ready(function() {
+
+            $.datepicker.setDefaults({  
+                dateFormat: 'yy-mm-dd'   
+           });  
+
+           $("#datepicker").datepicker();
+
             var fname       = $('#fname').val();
             var lname       = $('#lname').val();
             var email       = $('#email').val();
             var password    = $('#password').val();
+            var date        = $('#datepicker').val();
             
             
             $('#form_reg').validate({
@@ -106,6 +125,7 @@
                                 $('[name="lname"]').val('');
                                 $('[name="email"]').val('');
                                 $('[name="password"]').val('');
+                                $('[name="date"]').val('');
                             } 
                             else {
                                 console.log('Data not inserted');
@@ -122,8 +142,7 @@
                 }
             });
         });
-    </script>
-
-</body>
+        </script>
+    </body>
 </html>
 

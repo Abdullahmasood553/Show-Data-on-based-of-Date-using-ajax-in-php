@@ -6,13 +6,15 @@
     $lname       = ($_POST['lname']) ? $_POST['lname'] : '';
     $email       = ($_POST['email']) ? $_POST['email'] : '';
     $password    = ($_POST['password']) ? $_POST['password'] : '';
-
-    $sql = "INSERT INTO users(fname, lname, email, `password`) VALUES('$fname', '$lname', '$email', '$password')";
+    $date        = ($_POST['date']) ? $_POST['date'] : '';
+    
+    $sql = "INSERT INTO users(fname, lname, email, `password`, `date`) VALUES('$fname', '$lname', '$email', '$password', '$date')";
 
     if(mysqli_query($connect, $sql)) {
         echo 'Data inseterd';
     } else {
          echo 'Error: '.mysqli_error($connect);
     }
-
 ?>
+
+
