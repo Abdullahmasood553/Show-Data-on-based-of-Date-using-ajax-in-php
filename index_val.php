@@ -121,21 +121,6 @@
                     });
                 }
             });
-          
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'register.php',
-                    data: {
-                        fname: fname,
-                        lname: lname,
-                        email: email,
-                        password: password
-                    },
-                    success:function(data) {
-                        console.log(data);
-                    }
-                });
         });
     </script>
 
