@@ -31,7 +31,7 @@
                 <div id="get_data">  
                      <table class="table table-bordered">  
                           <tr>  
-                               <th >ID</th>  
+                               <th>ID</th>  
                                <th>First Name</th>  
                                <th>Last Name</th>  
                                <th>Email</th>  
